@@ -3,55 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinalys Conciergerie 😊| Confiance & Sérénité</title>
+    <title>Tinalys Conciergerie | Barcarès</title>
     <style>
         :root {
-            --primary: #0d2c54;
+            --navy: #0a1428;
             --gold: #d4af37;
-            --dark: #1a1a1a;
-            --beige: #f5f0e8;
+            --light: #f8f5f0;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; }
 
-        header { background: white; padding: 15px 20px; text-align: center; border-bottom: 1px solid #eee; }
-        .logo { max-width: 220px; }
+        header { background: rgba(10,20,40,0.95); padding: 20px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
+        .logo { max-width: 280px; }
 
         .hero {
-            background: linear-gradient(rgba(13,44,84,0.75), rgba(13,44,84,0.75)), url('https://picsum.photos/1200/700') center/cover;
+            background: linear-gradient(rgba(10,20,40,0.75), rgba(10,20,40,0.75)), url('https://picsum.photos/2000/1200') center/cover;
             color: white;
             text-align: center;
-            padding: 140px 20px 100px;
+            padding: 160px 20px 120px;
         }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 20px; line-height: 1.1; }
-        .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 30px; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
+        .hero .subtitle { font-size: 1.35rem; color: var(--gold); margin-bottom: 30px; }
 
-        .cta-button {
-            background: #00b8a9;
-            color: white;
-            padding: 18px 40px;
-            font-size: 1.2rem;
+        .cta {
+            background: var(--gold);
+            color: #0a1428;
+            padding: 18px 45px;
+            font-size: 1.25rem;
+            font-weight: bold;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
             display: inline-block;
         }
 
-        .services { padding: 70px 20px; background: var(--beige); }
-        .service-item {
-            background: white;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        .services, .testimonials {
+            padding: 80px 20px;
+            background: var(--light);
         }
-
-        .footer {
-            background: var(--dark);
-            color: #ddd;
+        .section-title {
             text-align: center;
-            padding: 50px 20px;
+            font-size: 2.1rem;
+            margin-bottom: 50px;
+            color: var(--navy);
         }
+        .service-grid, .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .service-item, .testimonial-item {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .stars { color: var(--gold); font-size: 1.4rem; margin-bottom: 12px; }
     </style>
 </head>
 <body>
@@ -61,30 +69,56 @@
     </header>
 
     <section class="hero">
-        <p style="font-size:1.1rem; margin-bottom:15px;">METTRE UN BIEN EN LOCATION, C’EST BIEN.<br>LE RENTABILISER AU MAXIMUM, C’EST MIEUX.</p>
-        <h1>Votre conciergerie<br>de confiance</h1>
-        <p style="font-size:1.3rem;">dans le secteur du Barcarès et ses alentours</p>
-        <a href="mailto:contact@tinalys.fr" class="cta-button">PRENDRE RENDEZ-VOUS GRATUITEMENT !</a>
+        <h1>Mettre un bien en location,<br>c’est bien.<br>Le rentabiliser au maximum,<br>c’est mieux.</h1>
+        <p class="subtitle">Votre conciergerie de confiance dans le secteur du Barcarès et ses alentours.</p>
+        <a href="tel:0644892425" class="cta">PRENDRE RENDEZ-VOUS GRATUITEMENT !</a>
     </section>
 
     <section class="services">
-        <div class="service-item">
-            <h3>🔑 Accueil & Remise des clés</h3>
-            <p>Check-in / check-out personnalisé et professionnel pour vos voyageurs.</p>
+        <h2 class="section-title">Nos Services</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <h3>🔑 Accueil & Remise des clés</h3>
+                <p>Check-in / check-out personnalisé et professionnel pour vos voyageurs.</p>
+            </div>
+            <div class="service-item">
+                <h3>✨ Ménage & Linge de maison</h3>
+                <p>Nettoyage complet et irréprochable entre chaque location.</p>
+            </div>
+            <div class="service-item">
+                <h3>🛠️ Intendance & Maintenance</h3>
+                <p>Suivi régulier de votre bien et interventions rapides.</p>
+            </div>
         </div>
-        <div class="service-item">
-            <h3>✨ Ménage & Linge de maison</h3>
-            <p>Nettoyage complet et irréprochable entre chaque location.</p>
-        </div>
-        <div class="service-item">
-            <h3>🛠️ Intendance & Maintenance</h3>
-            <p>Suivi régulier de votre bien et interventions rapides.</p>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="section-title">Ils nous font confiance</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-item">
+                <div class="stars">★★★★★</div>
+                <p>"Je vis à l’année dans la région d’Annecy et mes deux logements au Barcarès sont gérés par Tinalys. Je n’ai plus à m’inquiéter de rien, tout est parfait et les revenus ont clairement augmenté."</p>
+                <p><strong>— Laurent B., Propriétaire (Annecy)</strong></p>
+            </div>
+            <div class="testimonial-item">
+                <div class="stars">★★★★★</div>
+                <p>"Service ultra professionnel. Ils gèrent absolument tout. Je reçois mes revenus sans stress et le taux d’occupation a nettement augmenté."</p>
+                <p><strong>— Sophie Martin, Propriétaire à Barcarès</strong></p>
+            </div>
+            <div class="testimonial-item">
+                <div class="stars">★★★★☆</div>
+                <p>"Communication excellente et transparence totale. Une vraie tranquillité d’esprit. Je recommande sans hésiter."</p>
+                <p><strong>— Marc Dubois, Propriétaire à Port-Leucate</strong></p>
+            </div>
         </div>
     </section>
 
     <div class="footer">
-        <p>&copy; 2026 Tinalys Conciergerie — Tous droits réservés</p>
-        <p style="margin-top:15px;">Contact : <a href="mailto:contact@tinalys.fr" style="color:#d4af37;">contact@tinalys.fr</a></p>
+        <p style="font-size:1.7rem; color:var(--gold); margin-bottom:20px;">Tinalys Conciergerie</p>
+        <p>Idiri Mustapha — Fondateur</p>
+        <p style="margin:15px 0;">📞 <a href="tel:0644892425" style="color:var(--gold);">06 44 89 24 25</a></p>
+        <p><a href="mailto:tinalys.conciergerie@gmail.com" style="color:var(--gold);">tinalys.conciergerie@gmail.com</a></p>
+        <p style="margin-top:40px; font-size:0.9rem;">© 2026 Tinalys Conciergerie — Tous droits réservés</p>
     </div>
 
 </body>
