@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -28,7 +27,7 @@
             z-index: 100;
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
-        .logo { max-height: 95px; }
+        .logo { max-height: 95px; width: auto; }
 
         nav a {
             color: white;
@@ -38,13 +37,22 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(8,21,38,0.6), rgba(8,21,38,0.75)), url('https://picsum.photos/id/1015/2000/1300') center/cover;
+            background: linear-gradient(rgba(8,21,38,0.55), rgba(8,21,38,0.75)), url('https://picsum.photos/id/1015/2000/1300') center/cover no-repeat;
             color: white;
             text-align: center;
-            padding: 210px 20px 150px;
+            padding: 220px 20px 160px;
         }
-        .hero h1 { font-size: 3.1rem; margin-bottom: 25px; color: var(--gold); line-height: 1.1; }
-
+        .hero h1 {
+            font-size: 3.1rem;
+            margin-bottom: 25px;
+            color: var(--gold);
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 1.35rem;
+            max-width: 780px;
+            margin: 0 auto 40px;
+        }
         .cta-button {
             background: var(--gold);
             color: var(--navy);
@@ -58,7 +66,6 @@
 
         .section { padding: 90px 5%; scroll-margin-top: 80px; }
         .services { background: var(--cream); }
-        .trust { background: var(--navy); color: white; }
 
         .grid {
             display: grid;
@@ -69,20 +76,12 @@
         }
         .card {
             background: white;
-            padding: 40px 30px;
+            padding: 45px 30px;
             border-radius: 20px;
             box-shadow: 0 15px 45px rgba(0,0,0,0.1);
             text-align: center;
         }
         .card h3 { color: var(--navy); margin: 20px 0 15px; font-size: 1.55rem; }
-
-        .testimonial {
-            background: rgba(255,255,255,0.1);
-            padding: 40px;
-            border-radius: 20px;
-            margin: 25px auto;
-            max-width: 720px;
-        }
 
         footer {
             background: var(--navy);
@@ -99,7 +98,7 @@
         <img src="https://i.imgur.com/0QXKj.jpg" alt="Tinalys Conciergerie" class="logo">
         <nav>
             <a href="#services">Services</a>
-            <a href="#qui-sommes-nous">Qui sommes-nous ?</a>
+            <a href="#qui-sommes-nous">Qui sommes-nous</a>
             <a href="#trust">Pourquoi nous ?</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -131,9 +130,9 @@
 
     <section id="qui-sommes-nous" class="section" style="background:var(--cream);">
         <h2 style="text-align:center; margin-bottom:40px; color:var(--navy); font-size:2.4rem;">Qui sommes-nous ?</h2>
-        <p style="max-width:800px; margin:0 auto; text-align:center; font-size:1.2rem;">
+        <p style="max-width:800px; margin:0 auto; text-align:center; font-size:1.25rem;">
             Tinalys Conciergerie est une conciergerie familiale à taille humaine basée au Barcarès. 
-            Nous mettons notre expertise et notre passion au service des propriétaires qui souhaitent maximiser la rentabilité de leurs biens tout en profitant d’une sérénité totale.
+            Nous mettons notre expertise, notre rigueur et notre passion au service des propriétaires qui veulent maximiser la rentabilité de leurs biens tout en profitant d’une sérénité totale.
         </p>
     </section>
 
