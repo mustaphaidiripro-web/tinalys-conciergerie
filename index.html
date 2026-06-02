@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #081526;
-            --gold: #D4AF37;
-            --cream: #F7F4EE;
+            --navy: #0a1625;
+            --gold: #d4af37;
+            --cream: #f8f5f0;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -17,7 +17,7 @@
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
 
         header {
-            background: rgba(8, 21, 38, 0.97);
+            background: rgba(10, 22, 37, 0.98);
             padding: 20px 5%;
             display: flex;
             justify-content: space-between;
@@ -25,144 +25,116 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
-        .logo { max-height: 95px; width: auto; }
-
-        nav a {
+        .logo {
             color: white;
-            text-decoration: none;
-            margin: 0 18px;
-            font-weight: 500;
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
+        .logo span { color: var(--gold); }
 
         .hero {
-            background: linear-gradient(rgba(8,21,38,0.55), rgba(8,21,38,0.75)), url('https://picsum.photos/id/1015/2000/1300') center/cover no-repeat;
-            color: white;
+            background: linear-gradient(rgba(10,22,37,0.5), rgba(10,22,37,0.65)), 
+                        url('https://picsum.photos/id/1015/2000/1400') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 220px 20px 160px;
+            color: white;
+            padding: 0 20px;
         }
         .hero h1 {
-            font-size: 3.1rem;
-            margin-bottom: 25px;
+            font-size: 2.9rem;
             color: var(--gold);
-            line-height: 1.1;
+            margin-bottom: 25px;
+            line-height: 1.15;
         }
-        .hero p {
-            font-size: 1.35rem;
-            max-width: 780px;
-            margin: 0 auto 40px;
-        }
-        .cta-button {
+        .hero p { font-size: 1.3rem; max-width: 780px; margin: 0 auto 40px; }
+
+        .cta {
             background: var(--gold);
             color: var(--navy);
-            padding: 18px 52px;
-            font-size: 1.3rem;
+            padding: 18px 55px;
             border-radius: 50px;
-            text-decoration: none;
+            font-size: 1.25rem;
             font-weight: 600;
+            text-decoration: none;
             display: inline-block;
+            box-shadow: 0 10px 35px rgba(212, 175, 55, 0.4);
         }
 
-        .section { padding: 90px 5%; scroll-margin-top: 80px; }
+        .section { padding: 100px 5%; }
         .services { background: var(--cream); }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 35px;
-            max-width: 1200px;
+            max-width: 1250px;
             margin: 0 auto;
         }
         .card {
             background: white;
-            padding: 45px 30px;
+            padding: 35px;
             border-radius: 20px;
             box-shadow: 0 15px 45px rgba(0,0,0,0.1);
             text-align: center;
         }
-        .card h3 { color: var(--navy); margin: 20px 0 15px; font-size: 1.55rem; }
-
-        footer {
-            background: var(--navy);
-            color: #ddd;
-            text-align: center;
-            padding: 70px 20px;
+        .card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 25px;
         }
-        footer a { color: var(--gold); }
+        .card h3 { color: var(--navy); margin: 15px 0; font-size: 1.65rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="https://i.imgur.com/0QXKj.jpg" alt="Tinalys Conciergerie" class="logo">
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#qui-sommes-nous">Qui sommes-nous</a>
-            <a href="#trust">Pourquoi nous ?</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="logo">TINALYS <span>CONCIERGERIE</span></div>
     </header>
 
     <section class="hero">
-        <h1>Mettre un bien en location,<br>c’est bien.<br>Le rentabiliser au maximum,<br>c’est mieux.</h1>
-        <p>Votre conciergerie familiale à taille humaine dans le secteur du Barcarès et ses alentours.<br>Nous nous occupons de tout pour que vous profitiez sereinement.</p>
-        <a href="mailto:tinalys.conciergerie@gmail.com?subject=Demande%20de%20rendez-vous" class="cta-button">PRENDRE RENDEZ-VOUS GRATUITEMENT</a>
+        <div>
+            <h1>Mettre un bien en location,<br>c’est bien.<br>Le rentabiliser au maximum,<br>c’est mieux.</h1>
+            <p>Votre conciergerie familiale à taille humaine au Barcarès.<br>Nous nous occupons de tout pour que vous profitiez sereinement.</p>
+            <a href="mailto:tinalys.conciergerie@gmail.com?subject=Demande%20de%20rendez-vous" class="cta">PRENDRE RENDEZ-VOUS GRATUITEMENT</a>
+        </div>
     </section>
 
     <section id="services" class="services section">
-        <h2 style="text-align:center; margin-bottom:60px; color:var(--navy); font-size:2.4rem;">Nos Services</h2>
+        <h2 style="text-align:center; margin-bottom:70px; color:var(--navy); font-size:2.6rem;">Nos Services</h2>
         <div class="grid">
             <div class="card">
+                <img src="https://picsum.photos/id/1015/600/400" alt="Barcarès">
                 <h3>🔑 Accueil & Remise des clés</h3>
-                <p>Check-in et check-out personnalisés pour une expérience chaleureuse et professionnelle.</p>
+                <p>Check-in et check-out personnalisés et professionnels.</p>
             </div>
             <div class="card">
+                <img src="https://picsum.photos/id/106/600/400" alt="Femme de ménage">
                 <h3>🧺 Ménage & Blanchisserie</h3>
-                <p>Nettoyage complet et irréprochable + blanchisserie professionnelle du linge de maison.</p>
+                <p>Nettoyage complet + blanchisserie professionnelle du linge de maison.</p>
             </div>
             <div class="card">
+                <img src="https://picsum.photos/id/201/600/400" alt="Intendance">
                 <h3>🛠️ Intendance & Petits Travaux</h3>
-                <p>Suivi régulier, maintenance et interventions rapides pour votre bien.</p>
+                <p>Suivi régulier et interventions rapides sur votre bien.</p>
             </div>
         </div>
     </section>
 
-    <section id="qui-sommes-nous" class="section" style="background:var(--cream);">
-        <h2 style="text-align:center; margin-bottom:40px; color:var(--navy); font-size:2.4rem;">Qui sommes-nous ?</h2>
-        <p style="max-width:800px; margin:0 auto; text-align:center; font-size:1.25rem;">
-            Tinalys Conciergerie est une conciergerie familiale à taille humaine basée au Barcarès. 
-            Nous mettons notre expertise, notre rigueur et notre passion au service des propriétaires qui veulent maximiser la rentabilité de leurs biens tout en profitant d’une sérénité totale.
-        </p>
-    </section>
-
-    <section id="trust" class="trust section">
-        <h2 style="text-align:center; margin-bottom:50px; font-size:2.4rem; color:white;">Pourquoi les propriétaires nous choisissent ?</h2>
-        <div class="grid">
-            <div class="testimonial">
-                <p>"Une conciergerie familiale à taille humaine, réactive et de confiance. Ils s’occupent de tout comme si c’était leur propre bien."</p>
-                <p><strong>— Marc D., Port-Leucate</strong></p>
-            </div>
-            <div class="testimonial">
-                <p>"Je vis à Annecy et mes deux logements sont gérés à la perfection. Je n’ai plus aucun stress."</p>
-                <p><strong>— Laurent B., Barcarès</strong></p>
-            </div>
-            <div class="testimonial">
-                <p>"Réactivité impressionnante, propreté irréprochable et vrai suivi."</p>
-                <p><strong>— Émilie R., Leucate</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
+    <footer style="background:var(--navy); color:#ddd; text-align:center; padding:90px 20px;">
         <p><strong>Tinalys Conciergerie</strong></p>
         <p>Idiri Mustapha — Fondateur</p>
-        <p>📞 <a href="tel:0644892425">06 44 89 24 25</a></p>
-        <p>✉️ <a href="mailto:tinalys.conciergerie@gmail.com">tinalys.conciergerie@gmail.com</a></p>
-        <p style="margin-top:35px; opacity:0.8; font-size:0.95rem;">
-            SIRET : 899 618 656 00016<br>
-            © 2026 Tinalys Conciergerie — Tous droits réservés
-        </p>
+        <p>📞 <a href="tel:0644892425" style="color:var(--gold);">06 44 89 24 25</a></p>
+        <p>✉️ <a href="mailto:tinalys.conciergerie@gmail.com" style="color:var(--gold);">tinalys.conciergerie@gmail.com</a></p>
+        <p style="margin-top:40px; opacity:0.8;">SIRET : 899 618 656 00016</p>
+        <p>© 2026 — Tous droits réservés</p>
     </footer>
 
 </body>
