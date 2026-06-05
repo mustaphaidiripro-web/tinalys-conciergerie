@@ -508,6 +508,99 @@
             font-weight: 400;
         }
 
+        /* ========== DEUX CATÉGORIES ========== */
+        .duo-section { background: var(--cream); padding-bottom: 50px; }
+        .duo-intro { text-align: center; max-width: 640px; margin: 0 auto 50px; }
+        .duo-intro .section-label { justify-content: center; }
+        .duo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .duo-card {
+            display: block;
+            background: white;
+            border: 1px solid rgba(212,175,55,0.2);
+            padding: 45px 40px;
+            text-decoration: none;
+            color: var(--navy);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        .duo-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .duo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(10,22,40,0.15);
+            border-color: var(--gold);
+        }
+        .duo-card:hover::after { transform: scaleX(1); }
+        .duo-num {
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+        .duo-icon { font-size: 2.4rem; margin-bottom: 14px; }
+        .duo-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.1;
+        }
+        .duo-sub-fr {
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-top: 4px;
+            margin-bottom: 18px;
+        }
+        .duo-desc {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.75;
+            margin-bottom: 22px;
+        }
+        .duo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--navy);
+            font-weight: 500;
+        }
+        .duo-link span { transition: transform 0.3s; }
+        .duo-card:hover .duo-link span { transform: translateX(5px); }
+        .duo-card:hover .duo-link { color: var(--gold-dark); }
+
+        .cat-eyebrow {
+            display: inline-block;
+            font-size: 0.6rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid rgba(212,175,55,0.4);
+            padding: 6px 14px;
+            border-radius: 1px;
+            margin-bottom: 16px;
+        }
+
         /* ========== SERVICES ========== */
         .services-section {
             background: var(--cream);
@@ -1526,15 +1619,37 @@
             .hamburger { display: flex; }
             .nav-cta { display: none; }
 
-            .hero-content { padding: 100px 5% 80px; }
-            .hero h1 { font-size: 2.4rem; }
-            .hero-stats { position: relative; bottom: auto; right: auto; padding: 30px 5%; justify-content: center; }
+            .hero {
+                min-height: 0;
+                display: block;
+                background: var(--navy);
+                padding-top: 85px;
+            }
+            .hero-bg {
+                position: relative;
+                inset: auto;
+                width: 100%;
+                height: auto;
+                aspect-ratio: 756 / 500;
+                transform: none !important;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-color: var(--navy);
+            }
+            .hero-overlay { display: none; }
+            .hero-content { position: relative; z-index: 2; padding: 32px 6% 26px; max-width: 100%; }
+            .hero h1 { font-size: 2.3rem; }
+            .hero-stats { position: relative; bottom: auto; right: auto; padding: 0 5% 45px; justify-content: center; }
+            .hero-scroll { display: none; }
 
             .stats-band { grid-template-columns: repeat(2, 1fr); }
             .stats-band .stat-item:nth-child(2) { border-right: none; }
 
             .services-header { grid-template-columns: 1fr; gap: 20px; }
             .services-grid { grid-template-columns: 1fr; }
+            .duo-grid { grid-template-columns: 1fr; }
+            .duo-card { padding: 35px 28px; }
 
             .surveillance-grid { grid-template-columns: 1fr; }
             .process-grid { grid-template-columns: 1fr; gap: 50px; }
@@ -1594,8 +1709,8 @@
         </a>
 
         <nav id="nav">
-            <a href="#services" data-i18n="nav-services">Services</a>
-            <a href="#surveillance" data-i18n="nav-surveillance">Surveillance</a>
+            <a href="#services" data-i18n="nav-services">Conciergerie</a>
+            <a href="#surveillance" data-i18n="nav-surveillance">Home-sitting</a>
             <a href="#pourquoi" data-i18n="nav-about">À Propos</a>
             <a href="#zones" data-i18n="nav-zones">Zones</a>
             <a href="#contact" class="nav-cta" data-i18n="nav-rdv">Rendez-vous</a>
@@ -1686,12 +1801,41 @@
         </div>
     </div>
 
-    <!-- SERVICES -->
+    <!-- DEUX CATÉGORIES -->
+    <section class="duo-section" id="categories">
+        <div class="duo-intro">
+            <div class="section-label">Nos deux métiers</div>
+            <h2 class="section-title">Deux services,<br>une même <span class="gold">exigence</span></h2>
+            <p class="section-sub" style="margin: 14px auto 0;">Que votre bien soit loué ou que ce soit votre résidence secondaire, nous avons la solution. Choisissez ce qui vous correspond.</p>
+        </div>
+
+        <div class="duo-grid">
+            <a href="#services" class="duo-card">
+                <div class="duo-num">Catégorie 1</div>
+                <div class="duo-icon">🏠</div>
+                <div class="duo-title">Conciergerie</div>
+                <div class="duo-sub-fr">Gestion locative</div>
+                <p class="duo-desc">Vous louez votre bien ? Nous gérons tout de A à Z : accueil des voyageurs, ménage, blanchisserie, maintenance et litiges. Vos revenus, sans le stress.</p>
+                <span class="duo-link">Découvrir <span>→</span></span>
+            </a>
+
+            <a href="#surveillance" class="duo-card">
+                <div class="duo-num">Catégorie 2</div>
+                <div class="duo-icon">🛡️</div>
+                <div class="duo-title">Home-sitting</div>
+                <div class="duo-sub-fr">Gardiennage de résidence</div>
+                <p class="duo-desc">Vous ne louez pas ? Nous veillons sur votre résidence secondaire toute l'année : arrosage, courrier, aération, vigilance et entretien. Vous la retrouvez impeccable.</p>
+                <span class="duo-link">Découvrir <span>→</span></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- CONCIERGERIE (Catégorie 1) -->
     <section class="services-section" id="services">
         <div class="services-header">
             <div>
-                <div class="section-label">Nos Services</div>
-                <h2 class="section-title">Un accompagnement <span class="gold">complet</span> pour des locations sereines</h2>
+                <span class="cat-eyebrow">Catégorie 1 · Conciergerie</span>
+                <h2 class="section-title">Conciergerie <span class="gold">(Gestion locative)</span></h2>
             </div>
             <p class="section-sub">De l'accueil de vos voyageurs à l'entretien de votre bien, Tinalys prend en charge chaque détail avec professionnalisme et discrétion.</p>
         </div>
@@ -1734,10 +1878,10 @@
         </div>
     </section>
 
-    <!-- SURVEILLANCE / HOMESITTING -->
+    <!-- HOME-SITTING (Catégorie 2) -->
     <section class="surveillance-section" id="surveillance">
-        <div class="section-label">Quand vous n'êtes pas là</div>
-        <h2 class="section-title">Surveillance & entretien<br>de votre <span class="gold">résidence</span></h2>
+        <span class="cat-eyebrow">Catégorie 2 · Home-sitting</span>
+        <h2 class="section-title">Home-sitting <span class="gold">(Gardiennage de résidence)</span></h2>
         <p class="section-sub">Vous possédez une résidence secondaire au Barcarès ? Même sans la louer, nous veillons sur votre bien toute l'année pour que vous le retrouviez toujours impeccable.</p>
 
         <div class="surveillance-grid">
@@ -1845,13 +1989,6 @@
                 <div class="gallery-overlay">
                     <div class="gallery-tag">Studio</div>
                     <div class="gallery-title">Studio moderne</div>
-                </div>
-            </div>
-            <div class="gallery-item wide">
-                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=900&q=80&auto=format&fit=crop" onerror="this.src='https://picsum.photos/seed/g9/900/400'" alt="Villa avec piscine" loading="lazy">
-                <div class="gallery-overlay">
-                    <div class="gallery-tag">Villa · Piscine</div>
-                    <div class="gallery-title">Villa avec piscine</div>
                 </div>
             </div>
             <div class="gallery-item">
@@ -2183,10 +2320,10 @@
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="#services">Accueil & Remise des clés</a></li>
+                    <li><a href="#services">Conciergerie (Gestion locative)</a></li>
+                    <li><a href="#surveillance">Home-sitting (Gardiennage)</a></li>
                     <li><a href="#services">Ménage & Blanchisserie</a></li>
-                    <li><a href="#services">Intendance & Maintenance</a></li>
-                    <li><a href="#tarifs">Formule complète</a></li>
+                    <li><a href="#services">Accueil & Remise des clés</a></li>
                 </ul>
             </div>
 
@@ -2234,6 +2371,7 @@
         // Parallax léger sur le hero
         const heroBg = document.querySelector('.hero-bg');
         window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 768) return;
             const scrolled = window.scrollY;
             if (scrolled < window.innerHeight) {
                 heroBg.style.transform = `translateY(${scrolled * 0.35}px) scale(1.08)`;
@@ -2331,8 +2469,8 @@
 
         // Toggle langue FR / EN
         const translations = {
-            'nav-services': { fr: 'Services', en: 'Services' },
-            'nav-surveillance': { fr: 'Surveillance', en: 'Home care' },
+            'nav-services': { fr: 'Conciergerie', en: 'Concierge' },
+            'nav-surveillance': { fr: 'Home-sitting', en: 'Home-sitting' },
             'nav-about': { fr: 'À Propos', en: 'About' },
             'nav-zones': { fr: 'Zones', en: 'Areas' },
             'nav-rdv': { fr: 'Rendez-vous', en: 'Book now' },
@@ -2405,3 +2543,4 @@
 
 </body>
 </html>
+
