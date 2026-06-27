@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.tinalys-conciergerie.fr/sitemap.xml
